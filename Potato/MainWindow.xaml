@@ -1,0 +1,83 @@
+﻿<Window x:Class="Potato.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Potato"
+        mc:Ignorable="d"
+        Title="Алюминевые огурцы" Height="800" Width="800" Icon="YxFM2WiU-Bo.jpg">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="./Images/YxFM2WiU-Bo.jpg" Stretch="UniformToFill" IsHitTestVisible="False" Grid.ColumnSpan="2"/>
+
+        <TextBlock Text="" x:Name="resultWar" FontSize="25" Padding="30, 0" Background="White" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 60, 0, 0" Grid.ColumnSpan="2"/>
+        <Button Content="В БОЙ" Grid.ColumnSpan="2" Click="War_Click" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0, 200, 0, 0" Height="50" Width="200" Background="Red" FontSize="25" Foreground="White" FontWeight="Bold"/>
+
+        <StackPanel x:Name="pickle1View" VerticalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Padding" Value="30, 0" />
+                    <Setter Property="Margin" Value="0, 5" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="FontSize" Value="25" />
+                </Style>
+                <Style TargetType="TextBox" >
+                    <Setter Property="Margin" Value="30, 0" />
+                    <Setter Property="MinHeight" Value="30" />
+                    <Setter Property="BorderThickness" Value="2" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="16" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Огурец 1"/>
+            <TextBlock Text="Имя"/>
+            <TextBox Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Здоровье"/>
+            <TextBox Text="{Binding Health, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Защита"/>
+            <TextBox Text="{Binding Protection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Урон"/>
+            <TextBox Text="{Binding Damage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <StackPanel x:Name="pickle2View" VerticalAlignment="Center" Grid.Column="1">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Padding" Value="30, 0" />
+                    <Setter Property="Margin" Value="0, 5" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="FontSize" Value="25" />
+                </Style>
+                <Style TargetType="TextBox" >
+                    <Setter Property="Margin" Value="30, 0" />
+                    <Setter Property="MinHeight" Value="30" />
+                    <Setter Property="BorderThickness" Value="2" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="16" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Огурец 1"/>
+            <TextBlock Text="Имя"/>
+            <TextBox Text="{Binding Name}"/>
+            <TextBlock Text="Здоровье"/>
+            <TextBox Text="{Binding Health}"/>
+            <TextBlock Text="Защита"/>
+            <TextBox Text="{Binding Protection}"/>
+            <TextBlock Text="Урон"/>
+            <TextBox Text="{Binding Damage}"/>
+        </StackPanel>
+
+        <ListBox x:Name="report" Grid.ColumnSpan="2" Margin="50, 0, 20, 50"  VerticalAlignment="Bottom" MaxHeight="120">
+            
+        </ListBox> 
+    </Grid>
+</Window>
